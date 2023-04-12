@@ -2,30 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Add / edit user</title>
+    <title>Добавить / изменить пользователя</title>
 </head>
 <body>
 <form th:method="${add} ? 'POST' : 'PATCH'"
       th:action="${add} ? @{/admin} : @{/admin/edit_user/{id}(id=${user.getId()})}"
       th:object="${user}">
-    <h2>USER</h2>
-    <label for="name">Login</label>
+    <h2>Пользователь</h2>
+    <label for="name">Логин</label>
     <input type="text" th:field="*{username}" id="name"/>
     <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Error</p>
     <br><br>
-    <label for="age">Age</label>
+    <label for="age">Возраст</label>
     <input type="text" th:field="*{age}" id="age"/>
     <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Error</p>
     <br><br>
-    <label for="email">Email</label>
+    <label for="email">Почта</label>
     <input type="text" th:field="*{email}" id="email"/>
     <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error</p>
     <br><br>
-    <label for="password">Password</label>
+    <label for="password">Пароль</label>
     <input type="text" th:field="*{password}" id="password"/>
     <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error</p>
     <br><br>
-    <label for="role">Roles:</label>
+    <label for="role">Роли:</label>
     <input type="checkbox" name="roles"
            th:each="role : ${roles}"
            th:value="${role.getId()}"
@@ -37,17 +37,17 @@
     <br>
     <br>
     <div style="margin-left:20px;">
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Сохранить"/>
     </div>
 </form>
 <div style="margin-left:20px;">
     <br>
     <form th:method="GET" th:action="@{/admin}">
-        <input type="submit" value="Cancel"/>
+        <input type="submit" value="Отменить"/>
     </form>
     <br>
     <form th:method="GET" th:action="@{/logout}">
-        <input type="submit" value="Logout"/>
+        <input type="submit" value="Выход"/>
     </form>
 </div>
 </body>

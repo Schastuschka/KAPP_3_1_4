@@ -2,20 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>USER</title>
+    <title>Пользователь</title>
 </head>
 <body>
+
+
 <br>
-<table th:border="2">
-    <caption><h2>User</h2></caption>
+<table>
+    <caption><h2>Пользователь</h2></caption>
     <thead>
     <tr>
         <th th:width="100">ID</th>
-        <th th:width="100">Login</th>
-        <th th:width="50">Age</th>
-        <th th:width="100">Email</th>
-        <th th:width="100">Password</th>
-        <th>Roles</th>
+        <th th:width="100">Логин</th>
+        <th th:width="50">Возраст</th>
+        <th th:width="100">Почта</th>
+        <th th:width="100">Пароль</th>
+        <th>Роли</th>
     </tr>
     </thead>
     <tbody>
@@ -37,7 +39,7 @@
 <div style="margin-left:20px;">
     <br>
     <form th:method="GET" th:action="@{/logout}">
-        <input type="submit" value="Logout"/>
+        <input type="submit" value="Выход"/>
     </form>
 </div>
 </body>
