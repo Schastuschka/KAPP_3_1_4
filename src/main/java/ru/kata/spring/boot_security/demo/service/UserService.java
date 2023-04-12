@@ -17,6 +17,4 @@ public interface UserService {
     void deleteUser(Long id);
 
     void editUser(User updateUser);
-
-
 }
